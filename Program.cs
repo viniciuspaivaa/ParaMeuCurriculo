@@ -37,6 +37,7 @@ class Program
         List<Tarefa> tarefas = new List<Tarefa>();
         int opcao;
         int nmrTarefa;
+        string erroNovaTarefa = "Você não possui nenhuma tarefa no momento, adicione uma nova tarefa!\n";
 
 
         do
@@ -46,18 +47,9 @@ class Program
             Console.WriteLine("=".PadLeft(24, '='));
 
 
-            Console.WriteLine("1. Adicionar tarefa");
-            Console.WriteLine("2. Listar tarefas");
-            Console.WriteLine("3. Marcar como concluída");
-            Console.WriteLine("4. Remover tarefa");
-            Console.WriteLine("0. Sair");
+            Console.WriteLine("1. Adicionar tarefa\n2. Listar tarefas\n3. Marcar como concluída\n4. Remover tarefa\n0. Sair/Cancelar");
             Console.Write("Digite o que deseja: ");
-
-
-            while(!int.TryParse(Console.ReadLine(), out opcao) || opcao < 0 || opcao > 4)
-            {
-                Console.Write("Número inválido! Tente novamente: ");
-            }
+            while(!int.TryParse(Console.ReadLine(), out opcao) || opcao < 0 || opcao > 4){Console.Write("Número inválido! Tente novamente: ");}
             
             
             switch(opcao)
@@ -70,30 +62,36 @@ class Program
                     break;
 
                 case 2:
-                    foreach(var tarefa in tarefas)
+                    if(tarefas.Count() == 0)
                     {
-                        tarefa.Exibir();
+                        Console.WriteLine(erroNovaTarefa);
+                        break;
                     }
+                    foreach(var tarefa in tarefas){tarefa.Exibir();}
                     Console.WriteLine("\n");
                     break;
 
                 case 3:
-                    Console.Write("Digite a posição da tarefa: ");
-                    while(!int.TryParse(Console.ReadLine(), out nmrTarefa) || nmrTarefa < 1 || nmrTarefa > tarefas.Count() + 1)
+                    if(tarefas.Count() == 0)
                     {
-                        Console.Write("Não possui uma tarefa nesta posição! Tente novamente: ");
+                        Console.WriteLine(erroNovaTarefa);
+                        break;
                     }
+                    Console.Write("Digite a posição da tarefa: ");
+                    while(!int.TryParse(Console.ReadLine(), out nmrTarefa) || nmrTarefa < 1 || nmrTarefa > tarefas.Count()){Console.Write("Não possui uma tarefa nesta posição! Tente novamente: ");}
                     tarefas[nmrTarefa -1].Concluida = true;
                     Console.WriteLine("Tarefa marcada como concluída!\n");
                     break;
 
                 case 4:
-                    Console.Write("Digite a posição da tarefa: ");
-                    while(!int.TryParse(Console.ReadLine(), out nmrTarefa) || nmrTarefa < 1 || nmrTarefa > tarefas.Count() + 1)
+                    if(tarefas.Count() == 0)
                     {
-                        Console.Write("Não possui uma tarefa nesta posição! Tente novamente: ");
+                        Console.WriteLine(erroNovaTarefa);
+                        break;
                     }
-                    tarefas.RemoveAt(nmrTarefa - 1);
+                    Console.Write("Digite a posição da tarefa: ");
+                    while(!int.TryParse(Console.ReadLine(), out nmrTarefa) || nmrTarefa < 1 || nmrTarefa > tarefas.Count()){Console.Write("Não possui uma tarefa nesta posição! Tente novamente: ");}
+                    tarefas.RemoveAt(nmrTarefa -1);
                     Console.WriteLine("Tarefa removida com sucesso!\n");
                     break;
             }
