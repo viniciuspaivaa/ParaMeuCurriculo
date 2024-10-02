@@ -34,7 +34,7 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
-        string[] tarefas;
+        List<Tarefa> tarefas = new List<Tarefa>();
         int opcao;
 
 
@@ -64,15 +64,25 @@ class Program
                 case '1':
                     
                     break;
-                case '2':
+            
 
+                case '2':
+                    foreach(var tarefa in tarefas)
+                    {
+                        tarefa.Exibir();
+                    }
                     break;
+
                 case '3':
 
                     break;
+
+
                 case '4':
 
                     break;
+
+
                 default:
                     Console.Write("Erro desconhecido!");
                     break;
