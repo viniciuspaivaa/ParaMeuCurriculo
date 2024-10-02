@@ -3,3 +3,13 @@ C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ParaMeuCurriculo.Assem
 C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ParaMeuCurriculo.AssemblyInfo.cs
 C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ParaMeuCurriculo.csproj.CoreCompileInputs.cache
 C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ParaMeuCurriculo.sourcelink.json
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\bin\Debug\net8.0\ParaMeuCurriculo.exe
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\bin\Debug\net8.0\ParaMeuCurriculo.deps.json
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\bin\Debug\net8.0\ParaMeuCurriculo.runtimeconfig.json
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\bin\Debug\net8.0\ParaMeuCurriculo.dll
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\bin\Debug\net8.0\ParaMeuCurriculo.pdb
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ParaMeuCurriculo.dll
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\refint\ParaMeuCurriculo.dll
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ParaMeuCurriculo.pdb
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ParaMeuCurriculo.genruntimeconfig.cache
+C:\Users\Alunos\Desktop\ParaMeuCurriculo\obj\Debug\net8.0\ref\ParaMeuCurriculo.dll
