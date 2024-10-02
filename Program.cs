@@ -24,7 +24,7 @@ class Tarefa
         //     Console.Write("Não concluída");
         // }
         string status = Concluida ? "Concluída" : "Não concluída";
-        Console.Write($"Tarefa: {Nome}\nStatus: {status}");
+        Console.WriteLine($"Tarefa: {Nome}\nStatus: {status}\n");
     }
 }
 
@@ -33,13 +33,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Clear();
         List<Tarefa> tarefas = new List<Tarefa>();
         int opcao;
 
 
         do
         {   
+            Console.Clear();
             Console.WriteLine("=".PadLeft(24, '='));
             Console.WriteLine("GERENCIAMENTO DE TAREFAS");
             Console.WriteLine("=".PadLeft(24, '='));
@@ -61,24 +61,33 @@ class Program
             
             switch(opcao)
             {
-                case '1':
-                    
+                case 1:
+                    Console.Write("Digite o nome da tarefa: ");
+                    string nomeTarefa = Console.ReadLine();
+                    tarefas.Add(new Tarefa(nomeTarefa));
+                    Console.WriteLine("Tarefa adicionada!\n");
                     break;
-            
 
-                case '2':
+                case 2:
                     foreach(var tarefa in tarefas)
                     {
                         tarefa.Exibir();
                     }
+                    Console.WriteLine("\n");
                     break;
 
-                case '3':
-
+                case 3:
+                    int nmrTarefa;
+                    Console.Write("Digite a posição da tarefa: ");
+                    while(!int.TryParse(Console.ReadLine(), out nmrTarefa) || nmrTarefa < 1 || nmrTarefa > tarefas.Count() + 1)
+                    {
+                        Console.Write("Não possui uma tarefa nesta posição! Tente novamente: ");
+                    }
+                    tarefas[nmrTarefa -1].Concluida = true;
+                    Console.WriteLine("Tarefa marcada como concluída!\n");
                     break;
 
-
-                case '4':
+                case 4:
 
                     break;
             }
