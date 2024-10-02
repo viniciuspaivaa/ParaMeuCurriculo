@@ -40,9 +40,9 @@ class Program
 
         do
         {   
-            Console.WriteLine("=".PadRight(24));
+            Console.WriteLine("=".PadLeft(24, '='));
             Console.WriteLine("GERENCIAMENTO DE TAREFAS");
-            Console.WriteLine("=".PadRight(24));
+            Console.WriteLine("=".PadLeft(24, '='));
 
 
             Console.WriteLine("1. Adicionar tarefa");
@@ -80,11 +80,6 @@ class Program
 
                 case '4':
 
-                    break;
-
-
-                default:
-                    Console.Write("Erro desconhecido!");
                     break;
             }
         }
