@@ -47,7 +47,7 @@ class Program
             Console.WriteLine("=".PadLeft(24, '='));
 
 
-            Console.WriteLine("1. Adicionar tarefa\n2. Listar tarefas\n3. Marcar como concluída\n4. Remover tarefa\n0. Sair/Cancelar");
+            Console.WriteLine("1. Adicionar tarefa\n2. Listar tarefas\n3. Marcar como concluída\n4. Remover tarefa\n0. Sair");
             Console.Write("Digite o que deseja: ");
             while(!int.TryParse(Console.ReadLine(), out opcao) || opcao < 0 || opcao > 4){Console.Write("Número inválido! Tente novamente: ");}
             
@@ -94,6 +94,13 @@ class Program
                     tarefas.RemoveAt(nmrTarefa -1);
                     Console.WriteLine("Tarefa removida com sucesso!\n");
                     break;
+                case 0:
+                    Console.WriteLine("Finalizando programa...");
+                    Thread.Sleep(2000);
+                    break;
+                default:
+                    Console.Write("Erro inesperado!");
+                    goto case 0;
             }
         }
         while(opcao != 0);
