@@ -33,19 +33,52 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.Clear();
         string[] tarefas;
         int opcao;
 
 
         do
         {   
-            Console.WriteLine();
-            while(!int.TryParse(Console.ReadLine(), out opcao))
+            Console.WriteLine("=".PadRight(24));
+            Console.WriteLine("GERENCIAMENTO DE TAREFAS");
+            Console.WriteLine("=".PadRight(24));
+
+
+            Console.WriteLine("1. Adicionar tarefa");
+            Console.WriteLine("2. Listar tarefas");
+            Console.WriteLine("3. Marcar como concluída");
+            Console.WriteLine("4. Remover tarefa");
+            Console.WriteLine("0. Sair");
+            Console.Write("Digite o que deseja: ");
+
+
+            while(!int.TryParse(Console.ReadLine(), out opcao) || opcao < 0 || opcao > 4)
             {
                 Console.Write("Número inválido! Tente novamente: ");
             }
             
+            
+            switch(opcao)
+            {
+                case '1':
+                    
+                    break;
+                case '2':
+
+                    break;
+                case '3':
+
+                    break;
+                case '4':
+
+                    break;
+                default:
+                    Console.Write("Erro desconhecido!");
+                    break;
+            }
         }
         while(opcao != 0);
+        Console.Write("Programa encerrado!");
     }
 }
