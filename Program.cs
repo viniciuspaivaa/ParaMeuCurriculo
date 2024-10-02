@@ -33,13 +33,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.Clear();
         List<Tarefa> tarefas = new List<Tarefa>();
         int opcao;
+        int nmrTarefa;
 
 
         do
         {   
-            Console.Clear();
             Console.WriteLine("=".PadLeft(24, '='));
             Console.WriteLine("GERENCIAMENTO DE TAREFAS");
             Console.WriteLine("=".PadLeft(24, '='));
@@ -77,7 +78,6 @@ class Program
                     break;
 
                 case 3:
-                    int nmrTarefa;
                     Console.Write("Digite a posição da tarefa: ");
                     while(!int.TryParse(Console.ReadLine(), out nmrTarefa) || nmrTarefa < 1 || nmrTarefa > tarefas.Count() + 1)
                     {
@@ -88,7 +88,13 @@ class Program
                     break;
 
                 case 4:
-
+                    Console.Write("Digite a posição da tarefa: ");
+                    while(!int.TryParse(Console.ReadLine(), out nmrTarefa) || nmrTarefa < 1 || nmrTarefa > tarefas.Count() + 1)
+                    {
+                        Console.Write("Não possui uma tarefa nesta posição! Tente novamente: ");
+                    }
+                    tarefas.RemoveAt(nmrTarefa - 1);
+                    Console.WriteLine("Tarefa removida com sucesso!\n");
                     break;
             }
         }
