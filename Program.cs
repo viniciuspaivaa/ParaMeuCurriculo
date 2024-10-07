@@ -58,6 +58,10 @@ class Program
                     Console.Write("Digite o nome da tarefa: ");
                     string nomeTarefa = Console.ReadLine();
                     tarefas.Add(new Tarefa(nomeTarefa));
+                    using(StreamWriter salvar = new StreamWriter("tarefas.txt", true))
+                    {
+                        salvar.WriteLine(nomeTarefa);
+                    }
                     Console.WriteLine("Tarefa adicionada!\n");
                     break;
 
